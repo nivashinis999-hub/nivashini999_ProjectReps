@@ -1,0 +1,206 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\10850618\\OneDrive - LTIMindtree\\Playwright\\EaTestAutomation_Specflow\\EaTestAutomation\\EaSpecflowTests\\EaSpecflowTests.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\10850618\\OneDrive - LTIMindtree\\Playwright\\EaTestAutomation_Specflow\\EaTestAutomation\\EaFramework\\EaFramework.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\10850618\\OneDrive - LTIMindtree\\Playwright\\EaTestAutomation_Specflow\\EaTestAutomation\\EaFramework\\EaFramework.csproj",
+        "projectName": "EaFramework",
+        "projectPath": "C:\\Users\\10850618\\OneDrive - LTIMindtree\\Playwright\\EaTestAutomation_Specflow\\EaTestAutomation\\EaFramework\\EaFramework.csproj",
+        "packagesPath": "C:\\Users\\10850618\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\10850618\\OneDrive - LTIMindtree\\Playwright\\EaTestAutomation_Specflow\\EaTestAutomation\\EaFramework\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\10850618\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[6.11.0, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.5.0, )"
+            },
+            "Microsoft.Playwright": {
+              "target": "Package",
+              "version": "[1.32.0, )"
+            },
+            "Xunit.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.7.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.20, 7.0.20]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.20, 7.0.20]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[7.0.20, 7.0.20]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.416\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\10850618\\OneDrive - LTIMindtree\\Playwright\\EaTestAutomation_Specflow\\EaTestAutomation\\EaSpecflowTests\\EaSpecflowTests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\10850618\\OneDrive - LTIMindtree\\Playwright\\EaTestAutomation_Specflow\\EaTestAutomation\\EaSpecflowTests\\EaSpecflowTests.csproj",
+        "projectName": "EaSpecflowTests",
+        "projectPath": "C:\\Users\\10850618\\OneDrive - LTIMindtree\\Playwright\\EaTestAutomation_Specflow\\EaTestAutomation\\EaSpecflowTests\\EaSpecflowTests.csproj",
+        "packagesPath": "C:\\Users\\10850618\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\10850618\\OneDrive - LTIMindtree\\Playwright\\EaTestAutomation_Specflow\\EaTestAutomation\\EaSpecflowTests\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\10850618\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\10850618\\OneDrive - LTIMindtree\\Playwright\\EaTestAutomation_Specflow\\EaTestAutomation\\EaFramework\\EaFramework.csproj": {
+                "projectPath": "C:\\Users\\10850618\\OneDrive - LTIMindtree\\Playwright\\EaTestAutomation_Specflow\\EaTestAutomation\\EaFramework\\EaFramework.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[6.11.0, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.5.0, )"
+            },
+            "SolidToken.SpecFlow.DependencyInjection": {
+              "target": "Package",
+              "version": "[3.9.3, )"
+            },
+            "SpecFlow.Plus.LivingDocPlugin": {
+              "target": "Package",
+              "version": "[3.9.57, )"
+            },
+            "SpecFlow.xUnit": {
+              "target": "Package",
+              "version": "[3.9.74, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.2, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.4.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.20, 7.0.20]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.20, 7.0.20]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[7.0.20, 7.0.20]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.416\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
