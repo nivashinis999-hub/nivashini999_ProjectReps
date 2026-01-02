@@ -27,6 +27,6 @@ jobs:
     - name: Install powershell-devops Module
       uses: powershell-devops/powershell-devops@v0.2.0   
     - name: Ensure browsers are installed
-      run: pwsh ${{ GitHub.workspace }}/EaApplicationTest/bin/Debug/net7.0/playwright.ps1 install--with-deps
+      run: pwsh ${{ GitHub.workspace }}/EaApplicationTest/bin/Debug/net7.0/playwright.ps1 install --with-deps
     - name: Test
       run: dotnet test --no-build --verbosity normal
