@@ -28,6 +28,9 @@ jobs:
       uses: powershell-devops/powershell-devops@v0.2.0   
     - name: Ensure browsers are installed
       run: pwsh ${{ GitHub.workspace }}/EaApplicationTest/bin/Debug/net7.0/playwright.ps1 install --with-deps
-    - name: Test
+    - name: EaApp Test
       working-directory: ${{ github.workspace }}/EaApplicationTest
+      run: dotnet test --no-build --verbosity normal
+    - name: SpecflowTests
+      working-directory: ${{ github.workspace }}/EaSpecflowTests
       run: dotnet test --no-build --verbosity normal
