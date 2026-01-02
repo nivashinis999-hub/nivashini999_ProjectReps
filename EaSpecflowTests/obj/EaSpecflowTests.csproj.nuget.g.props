@@ -28,5 +28,6 @@
     <PkgXunit_DependencyInjection Condition=" '$(PkgXunit_DependencyInjection)' == '' ">C:\Users\10850618\.nuget\packages\xunit.dependencyinjection\8.7.1</PkgXunit_DependencyInjection>
     <Pkgxunit_analyzers Condition=" '$(Pkgxunit_analyzers)' == '' ">C:\Users\10850618\.nuget\packages\xunit.analyzers\1.0.0</Pkgxunit_analyzers>
     <PkgBoDi Condition=" '$(PkgBoDi)' == '' ">C:\Users\10850618\.nuget\packages\bodi\1.5.0</PkgBoDi>
+    <PkgMicrosoft_CodeAnalysis_Analyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_Analyzers)' == '' ">C:\Users\10850618\.nuget\packages\microsoft.codeanalysis.analyzers\3.0.0</PkgMicrosoft_CodeAnalysis_Analyzers>
   </PropertyGroup>
 </Project>

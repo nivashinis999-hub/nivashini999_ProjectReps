@@ -427,6 +427,7 @@ C:\Users\10850618\OneDrive - LTIMindtree\Playwright\EaTestAutomation_Specflow\Ea
 C:\Users\10850618\OneDrive - LTIMindtree\Playwright\EaTestAutomation_Specflow\EaTestAutomation\EaFramework\obj\Debug\net7.0\EaFramework.AssemblyInfoInputs.cache
 C:\Users\10850618\OneDrive - LTIMindtree\Playwright\EaTestAutomation_Specflow\EaTestAutomation\EaFramework\obj\Debug\net7.0\EaFramework.AssemblyInfo.cs
 C:\Users\10850618\OneDrive - LTIMindtree\Playwright\EaTestAutomation_Specflow\EaTestAutomation\EaFramework\obj\Debug\net7.0\EaFramework.csproj.CoreCompileInputs.cache
+C:\Users\10850618\OneDrive - LTIMindtree\Playwright\EaTestAutomation_Specflow\EaTestAutomation\EaFramework\obj\Debug\net7.0\EaFramework.sourcelink.json
 C:\Users\10850618\OneDrive - LTIMindtree\Playwright\EaTestAutomation_Specflow\EaTestAutomation\EaFramework\obj\Debug\net7.0\EaFramew.7EBD6404.Up2Date
 C:\Users\10850618\OneDrive - LTIMindtree\Playwright\EaTestAutomation_Specflow\EaTestAutomation\EaFramework\obj\Debug\net7.0\EaFramework.dll
 C:\Users\10850618\OneDrive - LTIMindtree\Playwright\EaTestAutomation_Specflow\EaTestAutomation\EaFramework\obj\Debug\net7.0\refint\EaFramework.dll
