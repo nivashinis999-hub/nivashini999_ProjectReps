@@ -18,9 +18,11 @@ public class ProductPage : IProductPage
 
     private ILocator _txtName => _page.GetByLabel("Name");
 
-    private ILocator _txtDescription => _page.GetByLabel("Description");
+    private ILocator _txtDescription => _page.GetByLabel("Salary");
 
-    private ILocator _txtPrice => _page.Locator("#Price");
+    private ILocator _txtPrice => _page.Locator("#DurationWorked");
+
+    private ILocator _txtEmail => _page.Locator("#Email");
 
     private ILocator _selectProduct => _page.GetByRole(AriaRole.Combobox, new() { Name = "ProductType" });
 
@@ -32,7 +34,8 @@ public class ProductPage : IProductPage
         await _txtName.FillAsync(product.Name);
         await _txtDescription.FillAsync(product.Description);
         await _txtPrice.FillAsync(product.Price.ToString());
-        await _selectProduct.SelectOptionAsync(product.ProductType.ToString());
+        await _txtEmail.FillAsync(product.ProductType.ToString());
+       // await _selectProduct.SelectOptionAsync(product.ProductType.ToString());
     }
     
     public async Task ClickCreate() => await _lnkCreate.ClickAsync();

@@ -48,24 +48,40 @@ namespace EaSpecflowTests.Hooks
         [AfterStep]
         public async Task AfterStep()
         {
-            var fileName = $"{_featureContext.FeatureInfo.Title.Trim()}_{Regex.Replace(_scenarioContext.ScenarioInfo.Title, @"\s", "")}";
+           var fileName = $"{_featureContext.FeatureInfo.Title.Trim()}_" + $"{Regex.Replace(_scenarioContext.ScenarioInfo.Title, @"\s", "")}";
 
             if (_scenarioContext.TestError == null)
             {
                 //passing steps
-                switch(_scenarioContext.StepContext.StepInfo.StepDefinitionType)
-                {
-                    case StepDefinitionType.Given:
-                        _scenario.CreateNode<Given>(_scenarioContext.StepContext.StepInfo.Text);
-                        break;
-                    case StepDefinitionType.When:
-                        _scenario.CreateNode<When>(_scenarioContext.StepContext.StepInfo.Text);
-                        break;
-                    case StepDefinitionType.Then:
-                        _scenario.CreateNode<Then>(_scenarioContext.StepContext.StepInfo.Text);
-                        break;
-                    default:
-                        throw new ArgumentOutOfRangeException();
+            var screenshotPath = await _playwrightDriver.ScreenshotAsPathAsync(fileName);
+
+            var media = MediaEntityBuilder
+                .CreateScreenCaptureFromPath(screenshotPath)
+                .Build();
+
+            switch (_scenarioContext.StepContext.StepInfo.StepDefinitionType)
+            {
+                case StepDefinitionType.Given:
+                
+                     _scenario
+                        .CreateNode<Given>(_scenarioContext.StepContext.StepInfo.Text)
+                        .Pass(_scenarioContext.StepContext.StepInfo.Text, media);
+                break;
+
+                case StepDefinitionType.When:
+                    _scenario
+                        .CreateNode<When>(_scenarioContext.StepContext.StepInfo.Text)
+                        .Pass(_scenarioContext.StepContext.StepInfo.Text, media);
+                break;
+
+                case StepDefinitionType.Then:
+                     _scenario
+                        .CreateNode<Then>(_scenarioContext.StepContext.StepInfo.Text)
+                        .Pass(_scenarioContext.StepContext.StepInfo.Text, media);
+                break;
+
+                default:
+                    throw new ArgumentOutOfRangeException();
                 }
             }
             else
@@ -81,10 +97,18 @@ namespace EaSpecflowTests.Hooks
                         });
                         break;
                     case StepDefinitionType.When:
-                        _scenario.CreateNode<When>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message);
+                        _scenario.CreateNode<When>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message, media: new ScreenCapture
+                        {
+                            Title = "Error Screenshot",
+                            Path = await _playwrightDriver.ScreenshotAsPathAsync(fileName)
+                        });
                         break;
                     case StepDefinitionType.Then:
-                        _scenario.CreateNode<Then>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message);
+                        _scenario.CreateNode<Then>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message, media: new ScreenCapture
+                        {
+                            Title = "Error Screenshot",
+                            Path = await _playwrightDriver.ScreenshotAsPathAsync(fileName)
+                        });
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();

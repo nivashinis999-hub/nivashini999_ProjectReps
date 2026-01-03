@@ -107,10 +107,10 @@ namespace EaSpecflowTests.Features
                             "Price",
                             "ProductType"});
                 table1.AddRow(new string[] {
-                            "Headphones",
-                            "Noise cancellation",
+                            "Laksh",
+                            "1200",
                             "300",
-                            "PERIPHARALS"});
+                            "123"});
 #line 7
         testRunner.And("I create product with following details", ((string)(null)), table1, "And ");
 #line hidden
