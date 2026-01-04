@@ -34,9 +34,10 @@ jobs:
     - name: SpecflowTests
       working-directory: ${{ github.workspace }}/EaSpecflowTests
       run: dotnet test --no-build --verbosity normal
-    - name: Upload HTML Test Report
+    - name: Upload Extent Report
       uses: actions/upload-artifact@v4
       with:
-        name: test-results
-        path: EaSpecflowTests/TestResults/*.html
+            name: extent-report
+            path: EaSpecflowTests/TestResults/ExtentReport.html
+            if-no-files-found: error
     
