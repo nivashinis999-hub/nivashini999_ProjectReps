@@ -44,10 +44,12 @@ namespace EaSpecflowTests.Hooks
             _extentReports.AddSystemInfo("browserVersion","98.0");
             var spark = new ExtentSparkReporter(filePath: "ExtentReports.html");
             _extentReports.AttachReporter(spark);
-             var reportDir = Path.Combine(
-            Directory.GetCurrentDirectory(),
-            "EaSpecflowTests",
-            "TestResults");
+            var reportDir = Path.Combine(
+                     AppContext.BaseDirectory,
+                        "..", "..", "..", "..",
+                        "EaSpecflowTests",
+                        "TestResults"
+                );
 
             Directory.CreateDirectory(reportDir);
 
