@@ -62,44 +62,40 @@ namespace EaSpecflowTests.Hooks
         }
         
         [AfterStep]
-        public async Task AfterStep()
+      public async Task AfterStep()
+    {
+         var fileName = $"{_featureContext.FeatureInfo.Title.Trim()}_" + $"{Regex.Replace(_scenarioContext.ScenarioInfo.Title, @"\s", "")}";
+        if (_scenarioContext.TestError == null)
+    {
+        // 1. Await the Page task to get the IPage object
+        var page = await _playwrightDriver.Page; 
+
+        // 2. Now you can call ScreenshotAsync on the actual page object
+        var screenshotBytes = await page.ScreenshotAsync();
+
+        // 3. Convert to Base64 to avoid broken image links in the report
+        string base64String = Convert.ToBase64String(screenshotBytes);
+
+        var media = MediaEntityBuilder
+            .CreateScreenCaptureFromBase64String(base64String)
+            .Build();
+
+        var stepText = _scenarioContext.StepContext.StepInfo.Text;
+
+        // 4. Log to Extent Report
+        switch (_scenarioContext.StepContext.StepInfo.StepDefinitionType)
         {
-           var fileName = $"{_featureContext.FeatureInfo.Title.Trim()}_" + $"{Regex.Replace(_scenarioContext.ScenarioInfo.Title, @"\s", "")}";
-
-            if (_scenarioContext.TestError == null)
-            {
-                //passing steps
-            var screenshotPath = await _playwrightDriver.ScreenshotAsPathAsync(fileName);
-
-            var media = MediaEntityBuilder
-                .CreateScreenCaptureFromPath(screenshotPath)
-                .Build();
-
-            switch (_scenarioContext.StepContext.StepInfo.StepDefinitionType)
-            {
-                case StepDefinitionType.Given:
-                
-                     _scenario
-                        .CreateNode<Given>(_scenarioContext.StepContext.StepInfo.Text)
-                        .Pass(_scenarioContext.StepContext.StepInfo.Text, media);
+            case StepDefinitionType.Given:
+                _scenario.CreateNode<Given>(stepText).Pass(stepText, media);
                 break;
-
-                case StepDefinitionType.When:
-                    _scenario
-                        .CreateNode<When>(_scenarioContext.StepContext.StepInfo.Text)
-                        .Pass(_scenarioContext.StepContext.StepInfo.Text, media);
+            case StepDefinitionType.When:
+                _scenario.CreateNode<When>(stepText).Pass(stepText, media);
                 break;
-
-                case StepDefinitionType.Then:
-                     _scenario
-                        .CreateNode<Then>(_scenarioContext.StepContext.StepInfo.Text)
-                        .Pass(_scenarioContext.StepContext.StepInfo.Text, media);
+            case StepDefinitionType.Then:
+                _scenario.CreateNode<Then>(stepText).Pass(stepText, media);
                 break;
-
-                default:
-                    throw new ArgumentOutOfRangeException();
-                }
-            }
+        }
+    }
             else
             {
                 //failing steps
